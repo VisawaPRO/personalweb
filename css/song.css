@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap');
+
+/* Profile Styles */
+body {
+    background-color: #111;
+    color: #fff;
+    font-family: 'Metal Mania', cursive;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-size: 1.5rem;
+}
+
+/* Header */
+header {
+    background: linear-gradient(to right, #5b0000, black, #5b0000);
+    padding: 40px;
+    font-size: 3rem;
+    text-shadow: 4px 4px 10px rgba(255, 0, 0, 0.8), 0 0 20px red;
+    border-bottom: 5px solid darkred;
+    letter-spacing: 5px;
+    animation: pulseGlow 2s infinite alternate;
+}
+
+/* Navigation */
+nav {
+    margin: 20px 0;
+}
+
+nav a {
+    color: silver;
+    text-decoration: none;
+    font-size: 1.8rem;
+    margin: 0 25px;
+    transition: color 0.3s, text-shadow 0.3s, transform 0.3s;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+nav a:hover {
+    color: white;
+    text-shadow: 0px 0px 20px red, 0px 0px 10px white;
+    transform: scale(1.1) rotate(-3deg);
+}
+
+/* Album List */
+.album-item {
+    font-size: 1.8rem;
+    margin: 10px 0;
+    padding: 12px;
+    background-color: #222;
+    border-radius: 5px;
+    transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s, color 0.3s;
+    cursor: pointer;
+    display: inline-block;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+}
+
+.album-item:hover {
+    background-color: #444;
+    color: red;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+}
+
+/* Profile Section */
+h1 {
+    margin-top: 30px;
+    font-size: 3.5rem;
+}
+
+.contact p {
+    font-size: 1.8rem;
+}
+
+.contact a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s, text-shadow 0.3s;
+    margin: 0 20px;
+}
+
+.contact a:hover {
+    color: red;
+    text-shadow: 0px 0px 20px red;
+}
+
+/* Profile Image */
+#profile-img {
+    width: 40%;
+    height: 40%;
+    border: 5px solid red;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#profile-img:hover {
+    transform: scale(1.1) rotate(3deg);
+    box-shadow: 0 0 30px rgba(255, 0, 0, 1);
+}
+
+/* Neon Glow Animation */
+@keyframes pulseGlow {
+    from {
+        text-shadow: 4px 4px 10px rgba(255, 0, 0, 0.8), 0 0 20px red;
+    }
+    to {
+        text-shadow: 6px 6px 20px rgba(255, 0, 0, 1), 0 0 30px red;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    header {
+        font-size: 2.2rem;
+        padding: 20px;
+    }
+
+    nav a {
+        font-size: 1.6rem;
+        margin: 0 10px;
+    }
+
+    .contact p {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        font-size: 2rem;
+        padding: 15px;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav a {
+        font-size: 1.4rem;
+        margin: 10px 0;
+        display: block;
+    }
+
+    .contact p {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        font-size: 1.7rem;
+        padding: 10px;
+    }
+
+    nav a {
+        font-size: 1.2rem;
+    }
+
+    .contact p {
+        font-size: 1.2rem;
+    }
+}

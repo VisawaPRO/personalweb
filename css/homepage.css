@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap');
+
+body {
+    background-color: #111;
+    color: #fff;
+    font-family: 'Metal Mania', cursive;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Header */
+header {
+    background: linear-gradient(to right, #5b0000, black, #5b0000);
+    padding: 30px;
+    font-size: 2.5rem;
+    text-shadow: 4px 4px 10px rgba(255, 0, 0, 0.8), 0 0 20px red;
+    border-bottom: 5px solid darkred;
+    letter-spacing: 5px;
+    animation: pulseGlow 2s infinite alternate;
+}
+
+/* Navigation */
+nav {
+    margin: 20px 0;
+}
+
+nav a {
+    color: silver;
+    text-decoration: none;
+    font-size: 1.8rem;
+    margin: 0 20px;
+    transition: color 0.3s, text-shadow 0.3s, transform 0.3s;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+nav a:hover {
+    color: white;
+    text-shadow: 0px 0px 20px red, 0px 0px 10px white;
+    transform: scale(1.1) rotate(-3deg);
+}
+
+/* Clock Container */
+.clock-container {
+    background-color: #000;
+    padding: 30px;
+    border: 5px solid #ff0000;
+    border-radius: 15px;
+    box-shadow: 0 0 25px red, 0 0 50px orange;
+    display: inline-block;
+    animation: pulse 1.5s infinite alternate;
+    transform: rotate(-5deg);
+}
+
+/* Time Display */
+.time {
+    font-size: 72px;
+    color: red;
+    text-shadow: 0 0 30px red, 0 0 50px orange, 0 0 70px yellow;
+}
+
+/* Info Display */
+.info {
+    font-size: 24px;
+    color: #fff;
+    text-shadow: 0 0 15px red, 0 0 25px orange;
+}
+
+/* Neon Glow Animation */
+@keyframes pulseGlow {
+    from {
+        text-shadow: 4px 4px 10px rgba(255, 0, 0, 0.8), 0 0 20px red;
+    }
+    to {
+        text-shadow: 6px 6px 20px rgba(255, 0, 0, 1), 0 0 30px red;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 25px red, 0 0 50px orange;
+    }
+    100% {
+        box-shadow: 0 0 50px yellow, 0 0 75px red;
+    }
+}
+
+/* Background Effects */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://images.unsplash.com/photo-1548834211-a9ce51bfbf0a') no-repeat center center;
+    background-size: cover;
+    opacity: 0.1;
+    z-index: -1;
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(to right, black, darkred);
+    padding: 30px;
+    font-size: 1.2rem;
+    text-shadow: 0px 0px 10px red;
+    border-top: 5px solid red;
+    position: relative;
+}
+
+/* Grid Layout */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 50px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Grid Items */
+.flex-item {
+    background: linear-gradient(to bottom, #800000, black);
+    padding: 50px;
+    border-radius: 15px;
+    font-size: 2rem;
+    text-shadow: 3px 3px 8px black;
+    box-shadow: 10px 10px 25px rgba(255, 0, 0, 0.6);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 2px solid red;
+    position: relative;
+    overflow: hidden;
+}
+
+.flex-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, transparent, rgba(255, 0, 0, 0.3), transparent);
+    transition: left 0.5s;
+}
+
+.flex-item:hover::before {
+    left: 100%;
+}
+
+.flex-item:hover {
+    transform: scale(1.1) rotate(2deg);
+    box-shadow: 15px 15px 35px rgba(255, 0, 0, 0.8);
+}
+
+/* Flex Item Link Styles */
+.flex-item a {
+    color: white; /* Set text color to white */
+    text-decoration: none; /* Remove underline */
+}
+
+.flex-item a:hover {
+    color: white;
+    text-shadow: 0px 0px 20px red, 0px 0px 10px white;
+    transform: scale(1.1) rotate(-3deg);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    header {
+        font-size: 2rem;
+        padding: 20px;
+    }
+    
+    nav a {
+        font-size: 1.5rem;
+        margin: 0 10px;
+    }
+
+    .grid-container {
+        padding: 30px;
+    }
+
+    .flex-item {
+        font-size: 1.6rem;
+        padding: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        font-size: 1.8rem;
+        padding: 15px;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav a {
+        font-size: 1.4rem;
+        margin: 10px 0;
+        display: block;
+    }
+
+    .grid-container {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        padding: 20px;
+    }
+
+    .flex-item {
+        font-size: 1.4rem;
+        padding: 30px;
+    }
+
+    footer {
+        font-size: 1rem;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        font-size: 1.5rem;
+        padding: 10px;
+    }
+
+    nav a {
+        font-size: 1.2rem;
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr;
+        padding: 10px;
+    }
+
+    .flex-item {
+        font-size: 1.2rem;
+        padding: 20px;
+    }
+
+    footer {
+        font-size: 0.9rem;
+    }
+}
